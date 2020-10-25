@@ -1,0 +1,12 @@
+#exclude Dependincies folder
+vendor/
+.import/
+**/*.import
+
+#exclude Test folder
+test/
+
+#exclude config with passwords
+db.sqlite
+
+## IDE support

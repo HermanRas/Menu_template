@@ -1,0 +1,366 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Menu/SettingsMenu/SettingsMenu.gd" type="Script" id=1]
+[ext_resource path="res://Menu/SettingsMenu/settingsMenu_bg.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Fonts/pageTitle.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/Fonts/pageName.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/Fonts/pageBtn.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Assets/barHorizontal_green_mid.png" type="Texture" id=6]
+[ext_resource path="res://Assets/barHorizontal_yellow_mid.png" type="Texture" id=7]
+[ext_resource path="res://Assets/barHorizontal_blue_mid.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Fonts/keybidningLables.tres" type="DynamicFont" id=9]
+[ext_resource path="res://Assets/Fonts/kenvector_future_thin.ttf" type="DynamicFontData" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="DynamicFont" id=5]
+size = 10
+outline_size = 1
+outline_color = Color( 0.839216, 0.811765, 0.811765, 1 )
+use_filter = true
+font_data = ExtResource( 10 )
+
+[node name="SettingsMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.24487
+margin_top = -4.48987
+margin_right = 2.24487
+margin_bottom = -4.48987
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -400.0
+margin_right = 400.0
+margin_bottom = 768.0
+rect_min_size = Vector2( 800, 768 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 35.0
+margin_top = 5.0
+margin_right = -35.0
+margin_bottom = -20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuText" type="Panel" parent="NinePatchRect/VBoxContainer"]
+margin_right = 730.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 0, 110 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="menuName" type="Label" parent="NinePatchRect/VBoxContainer/MenuText"]
+margin_top = 4.0
+margin_right = 730.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 4 )
+text = "Game Settings"
+
+[node name="title" type="Label" parent="NinePatchRect/VBoxContainer/MenuText"]
+margin_top = 40.0
+margin_right = 730.0
+margin_bottom = 94.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Settings"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sound" type="Panel" parent="NinePatchRect/VBoxContainer"]
+margin_top = 114.0
+margin_right = 730.0
+margin_bottom = 184.0
+rect_min_size = Vector2( 0, 70 )
+custom_styles/panel = SubResource( 2 )
+
+[node name="VolumeLable" type="Label" parent="NinePatchRect/VBoxContainer/Sound"]
+margin_top = 4.0
+margin_right = 730.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Master Volume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VolumeSpin" type="SpinBox" parent="NinePatchRect/VBoxContainer/Sound"]
+margin_top = 35.0
+margin_right = 74.0
+margin_bottom = 59.0
+size_flags_horizontal = 2
+step = 5.0
+value = 50.0
+rounded = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Grpahics" type="Panel" parent="NinePatchRect/VBoxContainer"]
+margin_top = 188.0
+margin_right = 730.0
+margin_bottom = 258.0
+rect_min_size = Vector2( 0, 70 )
+custom_styles/panel = SubResource( 3 )
+
+[node name="fullScreen" type="Label" parent="NinePatchRect/VBoxContainer/Grpahics"]
+margin_top = 4.0
+margin_right = 730.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Full Screen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckButton" type="CheckButton" parent="NinePatchRect/VBoxContainer/Grpahics"]
+margin_top = 35.0
+margin_right = 76.0
+margin_bottom = 75.0
+size_flags_horizontal = 2
+
+[node name="KeyBindings" type="Panel" parent="NinePatchRect/VBoxContainer"]
+margin_top = 262.0
+margin_right = 730.0
+margin_bottom = 682.0
+rect_min_size = Vector2( 0, 420 )
+custom_styles/panel = SubResource( 4 )
+
+[node name="ScrollBar" type="ScrollContainer" parent="NinePatchRect/VBoxContainer/KeyBindings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar"]
+margin_right = 730.0
+margin_bottom = 211.0
+rect_min_size = Vector2( 730, 0 )
+alignment = 1
+
+[node name="KeyBindingTitle" type="Label" parent="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer"]
+margin_right = 730.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Key Bindings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Warning" type="Label" parent="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer"]
+margin_top = 31.0
+margin_right = 730.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.823529, 0, 0, 1 )
+text = "Keyboard & Mouse Supported Other controlers ~ may work"
+
+[node name="HBoxCont_UP" type="HBoxContainer" parent="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer"]
+margin_top = 47.0
+margin_right = 730.0
+margin_bottom = 67.0
+alignment = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer/HBoxCont_UP"]
+margin_left = 338.0
+margin_top = 1.0
+margin_right = 358.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "up"
+
+[node name="Button" type="Button" parent="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer/HBoxCont_UP"]
+margin_left = 362.0
+margin_right = 392.0
+margin_bottom = 20.0
+toggle_mode = true
+text = "UP"
+
+[node name="HBoxCont_DOWN" type="HBoxContainer" parent="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer"]
+margin_top = 71.0
+margin_right = 730.0
+margin_bottom = 91.0
+alignment = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer/HBoxCont_DOWN"]
+margin_left = 314.0
+margin_top = 1.0
+margin_right = 355.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "DOWN"
+
+[node name="Button" type="Button" parent="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer/HBoxCont_DOWN"]
+margin_left = 359.0
+margin_right = 415.0
+margin_bottom = 20.0
+toggle_mode = true
+text = "DOWN"
+
+[node name="HBoxCont_LEFT" type="HBoxContainer" parent="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer"]
+margin_top = 95.0
+margin_right = 730.0
+margin_bottom = 115.0
+alignment = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer/HBoxCont_LEFT"]
+margin_left = 324.0
+margin_top = 1.0
+margin_right = 362.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "LEFT"
+
+[node name="Button" type="Button" parent="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer/HBoxCont_LEFT"]
+margin_left = 366.0
+margin_right = 406.0
+margin_bottom = 20.0
+toggle_mode = true
+text = "LEFT"
+
+[node name="HBoxCont_RIGHT" type="HBoxContainer" parent="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer"]
+margin_top = 119.0
+margin_right = 730.0
+margin_bottom = 139.0
+alignment = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer/HBoxCont_RIGHT"]
+margin_left = 315.0
+margin_top = 1.0
+margin_right = 358.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "RIGHT"
+
+[node name="Button" type="Button" parent="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer/HBoxCont_RIGHT"]
+margin_left = 362.0
+margin_right = 414.0
+margin_bottom = 20.0
+toggle_mode = true
+text = "RIGHT"
+
+[node name="HBoxCont_JUMP" type="HBoxContainer" parent="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer"]
+margin_top = 143.0
+margin_right = 730.0
+margin_bottom = 163.0
+alignment = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer/HBoxCont_JUMP"]
+margin_left = 317.0
+margin_top = 1.0
+margin_right = 357.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "JUMP"
+
+[node name="Button" type="Button" parent="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer/HBoxCont_JUMP"]
+margin_left = 361.0
+margin_right = 412.0
+margin_bottom = 20.0
+toggle_mode = true
+text = "SPACE"
+
+[node name="HBoxCont_CROUCH" type="HBoxContainer" parent="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer"]
+margin_top = 167.0
+margin_right = 730.0
+margin_bottom = 187.0
+alignment = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer/HBoxCont_CROUCH"]
+margin_left = 312.0
+margin_top = 1.0
+margin_right = 372.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "CROUCH"
+
+[node name="Button" type="Button" parent="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer/HBoxCont_CROUCH"]
+margin_left = 376.0
+margin_right = 418.0
+margin_bottom = 20.0
+toggle_mode = true
+text = "CTRL"
+
+[node name="HBoxCont_SHOOT" type="HBoxContainer" parent="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer"]
+margin_top = 191.0
+margin_right = 730.0
+margin_bottom = 211.0
+alignment = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer/HBoxCont_SHOOT"]
+margin_left = 313.0
+margin_top = 1.0
+margin_right = 361.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "SHOOT"
+
+[node name="Button" type="Button" parent="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer/HBoxCont_SHOOT"]
+margin_left = 365.0
+margin_right = 416.0
+margin_bottom = 20.0
+toggle_mode = true
+text = "ENTER"
+
+[node name="backBtn" type="TextureButton" parent="NinePatchRect/VBoxContainer"]
+margin_top = 686.0
+margin_right = 730.0
+margin_bottom = 741.0
+rect_min_size = Vector2( 0, 55 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 8 )
+expand = true
+
+[node name="backLabel" type="Label" parent="NinePatchRect/VBoxContainer/backBtn"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Back"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="value_changed" from="NinePatchRect/VBoxContainer/Sound/VolumeSpin" to="." method="_on_VolumeSpin_value_changed"]
+[connection signal="toggled" from="NinePatchRect/VBoxContainer/Grpahics/CheckButton" to="." method="_on_CheckButton_toggled"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer/HBoxCont_UP/Button" to="." method="_on_b_UP_pressed"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer/HBoxCont_DOWN/Button" to="." method="_on_b_DOWN_pressed"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer/HBoxCont_LEFT/Button" to="." method="_on_b_LEFT_pressed"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer/HBoxCont_RIGHT/Button" to="." method="_on_b_RIGHT_pressed"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer/HBoxCont_JUMP/Button" to="." method="_on_b_JUMP_pressed"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer/HBoxCont_CROUCH/Button" to="." method="_on_b_CROUCH_pressed"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/KeyBindings/ScrollBar/VBoxContainer/HBoxCont_SHOOT/Button" to="." method="_on_b_SHOOT_pressed"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/backBtn" to="." method="_on_backBtn_pressed"]
